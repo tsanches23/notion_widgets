@@ -6,7 +6,8 @@
   <title>Dynamic Greetings</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'montserrat', sans-serif;
+      font-weight: 600;
       margin: 0;
       padding: 0;
       display: flex;
@@ -17,7 +18,7 @@
     }
 
     #greeting-bar {
-      background-color: #3498db;
+      background-color: #520266;
       color: #fff;
       padding: 10px;
       border-radius: 5px;
@@ -34,17 +35,21 @@
       var currentDate = new Date();
       var currentHour = currentDate.getHours();
 
-      if (currentHour >= 5 && currentHour < 12) {
-        greetingBar.textContent = "Good morning, ";
-      } else if (currentHour >= 12 && currentHour < 18) {
-        greetingBar.textContent = "Good afternoon, ";
+      if (currentHour >= 5 && currentHour < 13) {
+        greetingBar.textContent = "Bom dia, ";
+      } else if (currentHour >= 13 && currentHour < 18) {
+        greetingBar.textContent = "Boa tarde, ";
       } else {
-        greetingBar.textContent = "Good night, ";
+        greetingBar.textContent = "Boa noite, ";
       }
 
       // Add your name dynamically
-      var yourName = "Your Name";
+      var yourName = "Tiago";
       greetingBar.textContent += yourName;
+
+      // Display current date and time
+      var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+      greetingBar.textContent += " | Hoje é " + currentDate.toLocaleDateString('pt-PT', options);
     }
 
     // Call the function on page load
@@ -52,4 +57,3 @@
   </script>
 </body>
 </html>
-
