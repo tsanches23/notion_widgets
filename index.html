@@ -1,1 +1,55 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Greetings</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    #greeting-bar {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="greeting-bar"></div>
+
+  <script>
+    function setGreeting() {
+      var greetingBar = document.getElementById("greeting-bar");
+      var currentDate = new Date();
+      var currentHour = currentDate.getHours();
+
+      if (currentHour >= 5 && currentHour < 12) {
+        greetingBar.textContent = "Good morning, ";
+      } else if (currentHour >= 12 && currentHour < 18) {
+        greetingBar.textContent = "Good afternoon, ";
+      } else {
+        greetingBar.textContent = "Good night, ";
+      }
+
+      // Add your name dynamically
+      var yourName = "Your Name";
+      greetingBar.textContent += yourName;
+    }
+
+    // Call the function on page load
+    setGreeting();
+  </script>
+</body>
+</html>
+
